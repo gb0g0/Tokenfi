@@ -72,7 +72,7 @@ const FAQ = ({ title, subtitle }) => {
 const FAQSection = () => {
   return (
     <div className="py-5 sm:py-10 gap-12 px-6 sm:px-20 flex flex-col items-center">
-      <div className="text-black text-4xl font-bold ">
+      <div className="text-black text-2xl text-center sm:text-4xl font-bold ">
         Frequently Asked Questions
       </div>
       <div className="mt-10 space-y-6">

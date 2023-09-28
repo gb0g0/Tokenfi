@@ -29,8 +29,8 @@ const Card = ({ stage, lists }) => {
 const Road = () => {
   return (
     <div className="w-full py-5 sm:py-10 gap-12 px-6 sm:px-20 flex flex-col items-center justify-center">
-      <div className="text-black text-4xl font-bold ">Roadmap</div>
-      <div className="text-black text-xl font-normal">
+      <div className="text-black text-xl sm:text-4xl font-bold ">Roadmap</div>
+      <div className="text-black text-base sm:text-xl font-normal text-center">
         Discover Our Exciting Roadmap And Milestones As We Shape The FutureOf
         Token Creation.
       </div>

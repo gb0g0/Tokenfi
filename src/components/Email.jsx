@@ -1,7 +1,7 @@
 const Email = () => {
   return (
     <form className="py-5 sm:py-20 gap-8 px-6 sm:px-20 flex flex-col items-center bg-white">
-      <div className="text-black text-4xl font-bold">
+      <div className="text-black sm:text-4xl text-2xl text-center font-bold">
         Get Notified When We Launch
       </div>
       <input
@@ -13,7 +13,7 @@ const Email = () => {
       />
       <button
       type="submit"
-        className={`text-white rounded-md p-5 active:scale-95 transition-all duration-300 bg-brand px-16`}
+        className={`text-white rounded-md sm:p-5 p-4 active:scale-95 transition-all duration-300 bg-brand sm:px-16`}
       >
         Subscribe
       </button>
