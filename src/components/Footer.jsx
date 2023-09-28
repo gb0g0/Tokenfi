@@ -3,7 +3,7 @@ import { Discrod, Twitter } from "../assets/icons";
 const Footer = () => {
   return (
     <div className="py-5 sm:py-20 gap-12 px-6 sm:px-20 flex sm:flex-row flex-col bg-brand">
-      <div className="text-white flex gap-5">
+      <div className="text-white flex sm:flex-row flex-col gap-5">
         <div class="w-[200px] h-[200px] bg-zinc-300 rounded-[10px]"></div>
         <div className="flex flex-col gap-3">
           <p className="text-white text-4xl font-semibold">Deployer</p>
