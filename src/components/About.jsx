@@ -7,14 +7,12 @@ const About = () => {
           About Smart Deployer
         </p>
         <p className="text-white text-xl font-normal w-full">
-          Everything You Need To Build Smart Contrasts SmartDeployer Is A
-          No-Code Platform That Enables Anyone To Create And Manage Tokens
-          Easily. With SmartDeployer, You Can Save Time And Money By Launching
-          Your Tokens Without Needing To Write A Single Line Of Code. <br />
-          Also, SmartDeployer Offers Security Auditing To Ensure That Tokens Are
-          Secure And Cannot Be Exploited. SmartDeployer's Tokens Are Also Highly
-          Optimized, Containing Only Necessary Functions To Ensure Their
-          Efficiency.
+          Tokenfy launcher is a customizable platform where tokens can be
+          created and made easily customizable for token creators to launch
+          their tokens. With our core features lies the possibility for our
+          users (businesses, communities, organizations and companies) to manage
+          their tokens directly through our platform, import tokens, and
+          customize tokens as preferable.
         </p>
         <button
           className={`rounded-md p-2 w-fit active:scale-95 transition-all duration-300 font-medium bg-white color px-3`}

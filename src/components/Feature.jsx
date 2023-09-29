@@ -23,20 +23,20 @@ const Feature = () => {
       <div className="text-black text-4xl font-bold ">Features</div>
       <div className="w-full sm:h-[25rem] flex sm:items-center justify-center sm:flex-row flex-wrap gap-6 sm:gap-20">
         <div className="w-fit h-full flex sm:items-start">
-          <Card icon={code} title1={"No-Code"} title2={"TokenCreation"} />
+          <Card icon={code} title1={"A No-Code"} title2={"launcher"} />
         </div>
         <div className="w-fit h-full flex sm:items-end">
-          <Card icon={token} title1={"Token Management"} title2={"Dashboard"} />
+          <Card icon={token} title1={"Eazy"} title2={"Importation"} />
         </div>
         <div className="w-fit h-full flex sm:items-start">
           <Card
             icon={setting}
             title1={"Customizable"}
-            title2={"TokenSettings"}
+            title2={"Token Settings"}
           />
         </div>
         <div className="w-fit h-full flex sm:items-end">
-          <Card icon={security} title1={"Security"} title2={"Auditing"} />
+          <Card icon={security} title1={"Set-up ready for"} title2={"token management."} />
         </div>
       </div>
     </div>

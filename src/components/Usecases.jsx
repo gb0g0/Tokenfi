@@ -1,9 +1,9 @@
 const Cases = ({ title, subtitle, img }) => {
   return (
     <div className="text-white flex flex-col gap-4 ">
-      <p className="text-2xl font-medium">{title}</p>
+      <p className="text-2xl font-semibold">{title}</p>
       <div className="flex gap-5">
-        <div className="min-w-[84px] h-[84px] bg-white "></div>
+        {/* <div className="min-w-[84px] h-[84px] bg-white "></div> */}
         <p className="sm:text-lg font-normal">{subtitle}</p>
       </div>
     </div>
@@ -19,26 +19,26 @@ const Usecases = () => {
       <div className="flex basis-1/2 gap-4 flex-col">
         <p className="text-yellow-400 text-2xl font-bold">Use case</p>
         <p className="text-white text-4xl font-bold">
-          Discover SmartDeployer's Top Use Cases
+          Get to know how Tokenfy launcher can be used in the DeFi ecosystem.
         </p>
         <Cases
-          title={"Business Tokenization"}
+          title={"- Initial Coin Offerings (ICOs) and Token Sales:"}
           subtitle={
-            "Create Custom Tokens For Businesses, Such As Loyalty Tokens, Rewards Tokens, Or Utility Tokens"
+            "One of the most common use cases for a token deployer is facilitating Initial Coin Offerings (ICOs) and token sales. Startups, projects, organisations, companies, communities, DAO's looking to raise capital can work with our tokenfy launcher to create and launch their own tokens on the blockchain which we integrate."
           }
         />
         <Cases
-          title={"Gaming"}
+          title={"- Tokenization of Assets:"}
           subtitle={
-            "Create Tokens For Gaming Applications, Such As In-Game Currencies, Items, Or Collectibles."
+            "By representing assets as digital tokens on a blockchain, they can be divided into smaller, more easily tradable units. This opens up new investment opportunities that enhance liquidity by using our launcher."
           }
         />
-        <Cases
+        {/* <Cases
           title={"Crowdfunding"}
           subtitle={
             "Create Tokens For Crowdfunding Campaigns, Allowing Backers To Receive Tokens In Exchange For Their Support."
           }
-        />
+        /> */}
       </div>
     </div>
   );

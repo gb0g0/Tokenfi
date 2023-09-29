@@ -13,7 +13,7 @@ const getContract = async () => {
     const Contract = new ethers.Contract(address, abi, signer);
     return Contract;
   } else {
-    alert("No wallet detected");
+    // alert("No wallet detected");
   }
 };
 

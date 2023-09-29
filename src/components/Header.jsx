@@ -16,13 +16,13 @@ const Header = () => {
             <button
               className={`rounded-md p-2 active:scale-95 transition-all duration-300 bg-white color px-3`}
             >
-              Create Tokens
+              Launch Crypto
             </button>
           </Link>
           <button
             className={`rounded-md p-2 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-3`}
           >
-            Download Whitepaper
+            Join Telegram
           </button>
         </div>
         <div className="flex sm:hidden relative">
@@ -49,14 +49,14 @@ const Header = () => {
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all duration-300 bg-white color px-12`}
                 >
-                  Create Tokens
+                  Launch Crypto 
                 </button>
               </Link>
               <div>
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-4`}
                 >
-                  Download Whitepaper
+                  Join Telegram 
                 </button>
               </div>
             </div>
