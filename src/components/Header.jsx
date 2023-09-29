@@ -19,11 +19,13 @@ const Header = () => {
               Launch Crypto
             </button>
           </Link>
-          <button
-            className={`rounded-md p-2 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-3`}
-          >
-            Join Telegram
-          </button>
+          <Link to="https://t.me/tokenfyhq">
+            <button
+              className={`rounded-md p-2 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-3`}
+            >
+              Join Telegram
+            </button>
+          </Link>
         </div>
         <div className="flex sm:hidden relative">
           {toogleMenu ? (

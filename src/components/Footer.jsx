@@ -1,5 +1,5 @@
 import { Discrod, Twitter, Logo } from "../assets/icons";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="py-5 sm:py-20 sm:gap-48 gap-10 px-6 sm:px-20 flex sm:flex-row flex-col bg-brand">
@@ -21,7 +21,9 @@ const Footer = () => {
         </div>
         <div className="flex gap-3">
           <Discrod />
-          <Twitter />
+          <Link to="https://twitter.com/tokenfynetwork">
+            <Twitter />
+          </Link>
         </div>
       </div>
     </div>
