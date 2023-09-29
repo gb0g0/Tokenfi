@@ -1,3 +1,4 @@
+import usecase from "../assets/usescase.jpg";
 const Cases = ({ title, subtitle, img }) => {
   return (
     <div className="text-white flex flex-col gap-4 ">
@@ -14,7 +15,7 @@ const Usecases = () => {
   return (
     <div className="w-full bg-brand py-6 px-6 sm:px-20 flex sm:flex-row flex-col items-center justify-center gap-5">
       <div className=" w-full h-full flex basis-1/2 p-5">
-        <div className="bg-white w-[500px] sm:h-[566px] h-[250px] max-w-[500px] max-h-[566px]"></div>
+        <div className="bg-transparent w-[500px] sm:h-[566px] h-[250px] max-w-[500px] max-h-[566px] usecase"></div>
       </div>
       <div className="flex basis-1/2 gap-4 flex-col">
         <p className="text-yellow-400 text-2xl font-bold">Use case</p>

@@ -43,22 +43,26 @@ const Header = () => {
       </div>
       <div>
         {toogleMenu && (
-          <div className={`text-white bg-brand relative z-10 transition-all grid duration-300 ${toogleMenu ? "grid-rows-[1fr] p-3" : "grid-rows-[0fr]"} `}>
+          <div
+            className={`text-white bg-brand relative z-10 transition-all grid duration-300 ${
+              toogleMenu ? "grid-rows-[1fr] p-3" : "grid-rows-[0fr]"
+            } `}
+          >
             <div className="flex flex-col gap-5 font-medium items-center justify-center py-6 min-h-0 transition-all duration-300 ">
               <Link to="/create">
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all duration-300 bg-white color px-12`}
                 >
-                  Launch Crypto 
+                  Launch Crypto
                 </button>
               </Link>
-              <div>
+              <Link to="https://t.me/tokenfyhq">
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-4`}
                 >
-                  Join Telegram 
+                  Join Telegram
                 </button>
-              </div>
+              </Link>
             </div>
           </div>
         )}

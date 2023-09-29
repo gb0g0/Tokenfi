@@ -17,11 +17,13 @@ const Hero = () => {
             Visit our launcher
           </button>
         </Link>
-        <button
-          className={`rounded-md p-3 active:scale-95 transition-all border-[#260E0E] border-2 duration-300 color font-semibold bg-white px-4`}
-        >
-          Join Telegram
-        </button>
+        <Link to={"https://t.me/tokenfyhq"}>
+          <button
+            className={`rounded-md p-3 active:scale-95 transition-all border-[#260E0E] border-2 duration-300 color font-semibold bg-white px-4`}
+          >
+            Join Telegram
+          </button>
+        </Link>
       </div>
     </div>
   );
