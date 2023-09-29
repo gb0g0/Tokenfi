@@ -7,7 +7,7 @@ import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 import { WagmiConfig } from "wagmi";
 import { zetachainAthensTestnet } from "wagmi/chains";
 // 1. Get projectId
-const projectId = "YOUR_PROJECT_ID";
+const projectId = "5c036caa882e3306871ef7df0eefdfc6";
 
 // 2. Create wagmiConfig
 const metadata = {
