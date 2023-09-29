@@ -12,7 +12,7 @@ const Email = () => {
         className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[2px] bg-transparent text-black text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[600px]"
       />
       <button
-      type="submit"
+        type="submit"
         className={`text-white rounded-md sm:p-5 p-4 active:scale-95 transition-all duration-300 bg-brand sm:px-16`}
       >
         Subscribe
