@@ -8,7 +8,7 @@ const Footer = () => {
         <Logo />
         <div className="flex flex-col gap-3">
           <p className="text-white sm:text-4xl text-2xl font-semibold">
-            TOKENFY LAUNCHER
+            TOKENFI LAUNCHER
           </p>
           <p className="max-w-[300px] text-white sm:text-2xl text-base font-normal">
             Secure, customizable, and optimizable.
@@ -20,10 +20,10 @@ const Footer = () => {
           Lets Connect
         </div>
         <div className="flex gap-3">
-          <Link to="https://t.me/tokenfyhq">
+          <Link to="https://t.me/tokenfihq">
             <Discrod />
           </Link>
-          <Link to="https://twitter.com/tokenfynetwork">
+          <Link to="https://twitter.com/tokenfinetwork">
             <Twitter />
           </Link>
         </div>

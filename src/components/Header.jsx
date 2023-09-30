@@ -19,7 +19,7 @@ const Header = () => {
               Launch Crypto
             </button>
           </Link>
-          <Link to="https://t.me/tokenfyhq">
+          <Link to="https://t.me/tokenfihq">
             <button
               className={`rounded-md p-2 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-3`}
             >
@@ -58,7 +58,7 @@ const Header = () => {
                   Launch Crypto
                 </button>
               </Link>
-              <Link to="https://t.me/tokenfyhq">
+              <Link to="https://t.me/tokenfihq">
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-4`}
                 >
