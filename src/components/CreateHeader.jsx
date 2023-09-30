@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LogoWhite } from "../assets/icons";
+import { LogoWhite, NautilusChain } from "../assets/icons";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { getAddress } from "../../utils";
 import { useEffect, useState } from "react";
@@ -24,7 +24,10 @@ const CreateHeader = () => {
           onClick={() => open({ view: "Networks" })}
         >
           <img
-            src="https://pbs.twimg.com/profile_images/1626225438849929218/h_HtSU1a_400x400.jpg"
+            // src="https://pbs.twimg.com/profile_images/1626225438849929218/h_HtSU1a_400x400.jpg"
+            src={
+              "https://ipfs.io/ipfs/QmafK1JDWBNtBwtKQQWbTQjQBQvev2jhWR86dK5n1ZgEKo"
+            }
             className="rounded-full"
             alt=""
           />
