@@ -8,10 +8,10 @@ const Footer = () => {
         <Logo />
         <div className="flex flex-col gap-3">
           <p className="text-white sm:text-4xl text-2xl font-semibold">
-            Deployer
+            TOKENFY LAUNCHER
           </p>
           <p className="max-w-[300px] text-white sm:text-2xl text-base font-normal">
-            Easy, secure, and optimized token creation with no code.
+            Secure, customizable, and optimizable.
           </p>
         </div>
       </div>

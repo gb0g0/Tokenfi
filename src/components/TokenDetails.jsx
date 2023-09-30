@@ -20,7 +20,7 @@ const TokenDetails = () => {
     <div className="w-full px-10 my-6 sm:px-16">
       <div className="py-5 sm:py-20 gap-8 px-6 sm:px-20 flex flex-col border rounded-[10px] border-black items-center bg-white">
         <div className="text-black sm:text-4xl text-2xl text-center font-bold">
-          Your Deployed Tokens
+          YOUR LAUNCHED TOKENS
         </div>
         <div className="w-full flex flex-col gap-5">
           <div className="flex gap-4 items-center">
@@ -36,7 +36,9 @@ const TokenDetails = () => {
             </div>
           </div>
         </div>
-        <div className="text-xl">{userToken == 0 ? "You have no deployed tokens": ""}</div>
+        <div className="text-xl">
+          {userToken == 0 ? "You have no deployed tokens" : ""}
+        </div>
       </div>
     </div>
   );
