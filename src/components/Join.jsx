@@ -3,7 +3,7 @@ const Join = () => {
   return (
     <div className="py-10 sm:py-20 gap-8 px-6 sm:px-20 flex flex-col items-center bg-brand">
       <div className="text-white sm:text-4xl text-2xl text-center font-medium sm:font-bold">
-        Join The Smart Deployer Community On Telegram
+        Join Tokenfy Network Community On Telegram
       </div>
       <div className="text-white sm:text-2xl text-lg text-center font-normal sm:font-bold">
         Join And Connect With Token Creators Worldwide

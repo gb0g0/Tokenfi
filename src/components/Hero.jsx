@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="min-h-[90vh] hero-bg flex w-full flex-col items-center justify-center px-5 sm:px-[8rem] gap-6">
-      <h2 className="sm:text-4xl font-medium">Say Hello,</h2>
+      <h2 className="sm:text-4xl font-medium">Say hello to Tokenfy!</h2>
       <h1 className="sm:text-4xl text-xl text-center font-semibold">
-        Tokenfy launcher is readily available to help businesses, communities,
-        organizations and companies create and launch web3 tokens on our
-        self-integrated Ethereum-compatible chains while rewarding their users.
+        Now you can easily launch Web3 tokens for your communities, projects,
+        and company on our Ethereum-compatible chains, all while rewarding your
+        users and customers.
       </h1>
       <div className="flex flex-col gap-5 sm:flex-row items-center">
         <Link to="/create">
