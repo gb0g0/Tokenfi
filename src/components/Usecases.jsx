@@ -20,12 +20,12 @@ const Usecases = () => {
       <div className="flex basis-1/2 gap-4 flex-col">
         <p className="text-yellow-400 text-2xl font-bold">Use case</p>
         <p className="text-white text-4xl font-bold">
-          Get to know how Tokenfy launcher can be used in the DeFi ecosystem.
+          Discover how Tokenfy Launcher can be utilized in the DeFi ecosystem.
         </p>
         <Cases
           title={"- Initial Coin Offerings (ICOs) and Token Sales:"}
           subtitle={
-            "One of the most common use cases for a token deployer is facilitating Initial Coin Offerings (ICOs) and token sales. Startups, projects, organisations, companies, communities, DAO's looking to raise capital can work with our tokenfy launcher to create and launch their own tokens on the blockchain which we integrate."
+            "One of the most common use cases for a token deployer is facilitating Initial Coin Offerings (ICOs) and token sales. Startups, projects, organizations, companies, communities, and DAOs seeking to raise capital can collaborate with our Tokenfy Launcher to create and launch their own tokens on the blockchain, seamlessly integrated with our platform."
           }
         />
         <Cases
