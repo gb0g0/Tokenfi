@@ -5,7 +5,12 @@ import "./index.css";
 import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 
 import { WagmiConfig } from "wagmi";
-import { zetachainAthensTestnet } from "wagmi/chains";
+import {
+  zetachainAthensTestnet,
+  nautileus,
+  localhost,
+  mainnet,
+} from "wagmi/chains";
 // 1. Get projectId
 const projectId = "5c036caa882e3306871ef7df0eefdfc6";
 
@@ -17,7 +22,7 @@ const metadata = {
   // icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const chains = [zetachainAthensTestnet];
+const chains = [localhost];
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 
 // 3. Create modal
@@ -25,7 +30,7 @@ createWeb3Modal({
   wagmiConfig,
   projectId,
   chains,
-  defaultChain: zetachainAthensTestnet,
+  defaultChain: localhost,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
