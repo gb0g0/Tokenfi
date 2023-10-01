@@ -11,6 +11,7 @@ const TokenDetails = () => {
     setUserToken(numberOfUserToken);
     const numberOfdeployedToken = await deployedTokens();
     setDeployedToken(numberOfdeployedToken);
+    console.log(userToken);
   };
   useEffect(() => {
     getTokens();
@@ -32,7 +33,7 @@ const TokenDetails = () => {
           <div className="flex gap-4 items-center">
             <div className="text-xl">Your Total Deployed Tokens:</div>
             <div className="w-10 h-10 bg-brand text-white rounded-[10px] flex items-center justify-center">
-              {userToken}
+              {userToken.length}
             </div>
           </div>
         </div>
