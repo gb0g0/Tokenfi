@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LogoWhite, NautilusChain } from "../assets/icons";
+import { LogoWhite, NautilusChain, Logo } from "../assets/icons";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { getAddress } from "../../utils";
 import { useEffect, useState } from "react";
@@ -15,8 +15,8 @@ const CreateHeader = () => {
   }, []);
   return (
     <div className="w-full flex justify-between bg-brand items-center py-3 px-5 sm:px-10">
-      <Link to="/">
-        <LogoWhite />
+      <Link to="/" className="flex items-center gap-3" >
+        <Logo /> <p className="text-white text-2xl" >Tokenfi.Network</p>
       </Link>
       <div className="flex items-center justify-center gap-2 font-medium">
         <button

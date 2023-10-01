@@ -130,7 +130,7 @@ export function LogoWhite(className) {
 export function Logo() {
   return (
     <svg
-      width="100"
+      width="50"
       // height="161"
       viewBox="0 0 161 161"
       fill="none"
