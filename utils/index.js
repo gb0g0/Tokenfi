@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { contractAddress, abi } from "./contract";
 import { ethers } from "ethers";
+import { useContractWrite } from "wagmi";
 
+// let ca
 const getContract = async () => {
   if (window.ethereum) {
     const chainId = parseInt(window.ethereum.chainId);
-    const address =
-      chainId in contractAddress ? contractAddress[chainId][0] : null;
-    console.log(address);
+    // ca =
+    //   chainId in contractAddress ? contractAddress[chainId][0] : null;
+    // console.log(address);
     const provider = new ethers.BrowserProvider(window.ethereum); // A connection to the Ethereum network
     const signer = await provider.getSigner(); // Holds your private key and can sign things
-    const Contract = new ethers.Contract(address, abi, signer);
+    const Contract = new ethers.Contract(contractAddress, abi, signer);
     return Contract;
   } else {
     // alert("No wallet detected");
@@ -38,13 +40,27 @@ export async function getAddress() {
   }
 }
 
-export async function deploy(name, symbol, supply) {
-  try {
-    const contract = await getContract();
-    return await contract.deployERC20Token(name, symbol, supply);
-  } catch (error) {
+
+
+function deploy(name, symbol, supply) {
+  // try {
+  //   const contract = await getContract();
+  //   return await contract.deployERC20Token(name, symbol, supply);
+  // } catch (error) {
+  //   alert("Error deploying Token");
+  //   console.log(error);
+  // }
+  write({ args: [name, symbol, supply] });
+  console.log("called");
+
+  if (isLoading) {
+    return;
+  }
+
+  if (error) {
     alert("Error deploying Token");
-    console.log(error);
+  } else {
+    alert("Token deployed Successfully");
   }
 }
 export async function getUserTokens(address) {

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { deploy, getAddress } from "../../utils";
+import { getAddress } from "../../utils";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
+import { useContractWrite } from "wagmi";
+import { contractAddress, abi } from "../../utils/contract";
+
 const Input = ({ labelName, value, handleChange, inputType, placeholder }) => {
   return (
     <label className="flex-1 w-full flex flex-col">
@@ -23,6 +26,27 @@ const Input = ({ labelName, value, handleChange, inputType, placeholder }) => {
 };
 
 const FormField = () => {
+
+  const { data, isLoading, error, write } = useContractWrite({
+    address: contractAddress,
+    abi: abi,
+    functionName: "deployERC20Token",
+  });
+
+  function deploy(name, symbol, supply) {
+    write({ args: [name, symbol, supply] });
+    console.log("called");
+
+    if (data) {
+      alert("Token deployed Successfully");;
+    }
+
+    if (error) {
+      alert("Error deploying Token");
+      console.log(error)
+    }
+  }
+
   const { open } = useWeb3Modal();
   const [address, setAddress] = useState();
   const useAddress = async () => {
@@ -48,7 +72,7 @@ const FormField = () => {
     const name = createTokenForm.name;
     const symbol = createTokenForm.symbol;
     const supply = createTokenForm.supply;
-    await deploy(name, symbol, supply);
+    deploy(name, symbol, supply);
   };
   return (
     <form
