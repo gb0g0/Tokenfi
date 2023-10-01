@@ -59,7 +59,9 @@ export async function getUserTokens(address) {
 export async function deployedTokens() {
   try {
     const contract = await getContract();
-    return await contract.deployedTokens();
+    const responds = await contract.deployedTokens();
+    console.log("here:", responds);
+    return responds;
   } catch (error) {
     console.log(error);
     return "0";

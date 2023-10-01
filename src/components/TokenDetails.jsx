@@ -25,20 +25,20 @@ const TokenDetails = () => {
         </div>
         <div className="w-full flex flex-col gap-5">
           <div className="flex gap-4 items-center">
-            <div className="text-xl">Total Deployed Tokens:</div>
+            <div className="text-xl">Total Launched Tokens:</div>
             <div className="w-10 h-10 bg-brand text-white rounded-[10px] flex items-center justify-center">
-              {deployedToken}
+              {deployedToken.toString()}
             </div>
           </div>
           <div className="flex gap-4 items-center">
-            <div className="text-xl">Your Total Deployed Tokens:</div>
+            <div className="text-xl">Your Total Launched Tokens:</div>
             <div className="w-10 h-10 bg-brand text-white rounded-[10px] flex items-center justify-center">
               {userToken.length}
             </div>
           </div>
         </div>
         <div className="text-xl">
-          {userToken == 0 ? "You have no deployed tokens" : ""}
+          {userToken == 0 ? "You have no Launched tokens" : ""}
         </div>
       </div>
     </div>
