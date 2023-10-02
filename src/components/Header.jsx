@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
-import { LogoWhite } from "../assets/icons";
+import { Logo } from "../assets/icons";
 const Header = () => {
   const [toogleMenu, setToogleMenu] = useState(false);
   return (
     <div className="w-full relative">
       <div className="w-full flex justify-between bg-brand items-center py-3 px-5 sm:px-10">
-        <Link to="/">
-          <LogoWhite />
+        <Link to="/" className="flex items-center gap-3">
+          <Logo /> <p className="text-white text-2xl">Tokenfi.Network</p>
         </Link>
         <div className="sm:flex hidden gap-5 font-medium">
           <Link to="/create">
@@ -19,7 +19,7 @@ const Header = () => {
               Launch Crypto
             </button>
           </Link>
-          <Link to="https://t.me/tokenfihq">
+          <Link to="https://t.me/+VHsB-m7LFgk1ZGY0">
             <button
               className={`rounded-md p-2 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-3`}
             >
@@ -58,7 +58,7 @@ const Header = () => {
                   Launch Crypto
                 </button>
               </Link>
-              <Link to="https://t.me/tokenfihq">
+              <Link to="https://t.me/+VHsB-m7LFgk1ZGY0">
                 <button
                   className={`rounded-md p-4 active:scale-95 transition-all border-white border-2 duration-300 bg-brand text-white px-4`}
                 >

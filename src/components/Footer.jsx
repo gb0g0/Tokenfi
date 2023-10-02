@@ -20,7 +20,7 @@ const Footer = () => {
           Lets Connect
         </div>
         <div className="flex gap-3">
-          <Link to="https://t.me/tokenfihq">
+          <Link to="https://t.me/+VHsB-m7LFgk1ZGY0">
             <Discrod />
           </Link>
           <Link to="https://twitter.com/tokenfinetwork">

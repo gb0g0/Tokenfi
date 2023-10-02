@@ -1,4 +1,5 @@
 import robot from "../assets/Robot.png";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="w-full bg-brand py-6 px-6 sm:px-20 flex sm:flex-row flex-col items-center justify-center gap-5">
@@ -14,11 +15,13 @@ const About = () => {
           directly through our platform. Users can import tokens and customize
           them according to their preferences.
         </p>
-        <button
-          className={`rounded-md p-2 w-fit active:scale-95 transition-all duration-300 font-medium bg-white color px-3`}
-        >
-          Create Tokens
-        </button>
+        <Link to="/create">
+          <button
+            className={`rounded-md p-2 w-fit active:scale-95 transition-all duration-300 font-medium bg-white color px-3`}
+          >
+            Create Tokens
+          </button>
+        </Link>
       </div>
       <div className="w-full h-full flex grow pb-[1.5rem] basis-1/2">
         <img src={robot} alt="robot" />
