@@ -1,20 +1,39 @@
 import { useEffect, useState } from "react";
-import { deployedTokens, getUserTokens, getAddress } from "../../utils";
+// import { deployedTokens, getUserTokens, getAddress } from "../../utils";
+import { contractAddress, abi } from "../../utils/contract";
+import {
+  useContractWrite,
+  useNetwork,
+  useAccount,
+  useContractRead,
+} from "wagmi";
 
 const TokenDetails = () => {
   const [userToken, setUserToken] = useState("");
   const [deployedToken, setDeployedToken] = useState("");
-  const getTokens = async () => {
-    const address = await getAddress();
-    console.log(address);
-    const numberOfUserToken = await getUserTokens(address);
-    setUserToken(numberOfUserToken);
-    const numberOfdeployedToken = await deployedTokens();
-    setDeployedToken(numberOfdeployedToken);
-    console.log(userToken);
-  };
+  const { address, isConnected } = useAccount();
+
+  const { chain } = useNetwork();
+  const tokenfiaddress =
+    chain?.id in contractAddress ? contractAddress[chain?.id][0] : null;
+  const { data, isLoading, error, write } = useContractWrite({
+    address: tokenfiaddress,
+    abi: abi,
+    functionName: "deployedTokens",
+  });
+
+  // const
+  // const getTokens = async () => {
+  // const address = await getAddress();
+  // console.log(address);
+  // const numberOfUserToken = await getUserTokens(address);
+  // setUserToken(numberOfUserToken);
+  // const numberOfdeployedToken = await deployedTokens();
+  // setDeployedToken(numberOfdeployedToken);
+  // console.log(userToken);
+  // };
   useEffect(() => {
-    getTokens();
+    console.log(write({ args: [""] }));
   }, []);
 
   return (

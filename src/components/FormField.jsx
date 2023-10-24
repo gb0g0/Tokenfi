@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAddress } from "../../utils";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
-import { useContractWrite } from "wagmi";
+import { useContractWrite, useNetwork, useAccount } from "wagmi";
 import { contractAddress, abi } from "../../utils/contract";
 
 const Input = ({ labelName, value, handleChange, inputType, placeholder }) => {
@@ -26,9 +26,14 @@ const Input = ({ labelName, value, handleChange, inputType, placeholder }) => {
 };
 
 const FormField = () => {
+  const { address, isConnected } = useAccount();
 
+  const { chain } = useNetwork();
+  const tokenfiaddress =
+    chain?.id in contractAddress ? contractAddress[chain?.id][0] : null;
+  console.log(tokenfiaddress);
   const { data, isLoading, error, write } = useContractWrite({
-    address: contractAddress,
+    address: tokenfiaddress,
     abi: abi,
     functionName: "deployERC20Token",
   });
@@ -38,23 +43,17 @@ const FormField = () => {
     console.log("called");
 
     if (data) {
-      alert("Token deployed Successfully");;
+      alert("Token deployed Successfully");
     }
 
     if (error) {
       alert("Error deploying Token");
-      console.log(error)
+      console.log(error);
     }
   }
 
   const { open } = useWeb3Modal();
-  const [address, setAddress] = useState();
-  const useAddress = async () => {
-    setAddress(await getAddress());
-  };
-  useEffect(() => {
-    useAddress();
-  }, []);
+  useEffect(() => {}, []);
   const [createTokenForm, setCreateTokenForm] = useState({
     name: "",
     symbol: "",
