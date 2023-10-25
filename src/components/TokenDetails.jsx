@@ -43,8 +43,8 @@ const TokenDetails = () => {
   });
   // console.log(data[0].result);
   // console.log(data[1].result);
-  console.log(data[1].result);
-  console.log(data[0].result);
+  // console.log(data[1].result);
+  // console.log(data[0].result);
   // };
   // const
   // const getTokens = async () => {
@@ -60,8 +60,8 @@ const TokenDetails = () => {
     // console.log(write({ args: [""] }));
     // getUserTokens();
     // getTotalTokens();
-    setUserToken(data[0].result.length);
-    setDeployedToken(data[1].result.toString());
+    // setUserToken(data[0].result.length);
+    // setDeployedToken(data[1].result.toString());
   }, [address, chain]);
 
   return (
