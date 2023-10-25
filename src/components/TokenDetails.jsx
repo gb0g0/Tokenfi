@@ -41,8 +41,10 @@ const TokenDetails = () => {
       },
     ],
   });
-  console.log(data[0].result.length);
-  console.log(data[1].result.toString());
+  // console.log(data[0].result);
+  // console.log(data[1].result);
+  console.log(data[1].result);
+  console.log(data[0].result);
   // };
   // const
   // const getTokens = async () => {
@@ -60,7 +62,7 @@ const TokenDetails = () => {
     // getTotalTokens();
     setUserToken(data[0].result.length);
     setDeployedToken(data[1].result.toString());
-  }, []);
+  }, [address, chain]);
 
   return (
     <div className="w-full px-10 my-6 sm:px-16">
