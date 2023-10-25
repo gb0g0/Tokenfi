@@ -74,7 +74,7 @@ createWeb3Modal({
   wagmiConfig,
   projectId,
   chains,
-  defaultChain: Nautileus,
+  defaultChain: EngramTestnet,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
