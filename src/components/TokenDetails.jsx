@@ -5,7 +5,7 @@ import {
   useContractWrite,
   useNetwork,
   useAccount,
-  useContractRead,
+  useContractReads,
 } from "wagmi";
 
 const TokenDetails = () => {
@@ -16,12 +16,34 @@ const TokenDetails = () => {
   const { chain } = useNetwork();
   const tokenfiaddress =
     chain?.id in contractAddress ? contractAddress[chain?.id][0] : null;
-  const { data, isLoading, error, write } = useContractWrite({
-    address: tokenfiaddress,
-    abi: abi,
-    functionName: "deployedTokens",
-  });
+  // const getTotalTokens = () => {
+  // const { data, isLoading, error } = useContractRead({
+  //   address: tokenfiaddress,
+  //   abi: abi,
+  //   functionName: "deployedTokens",
+  // });
+  // setDeployedToken(data);
+  // };
 
+  // const getUserTokens = () => {
+  const { data, isLoading, error } = useContractReads({
+    contracts: [
+      {
+        address: tokenfiaddress,
+        abi: abi,
+        functionName: "GetUserTokens",
+        args: [address],
+      },
+      {
+        address: tokenfiaddress,
+        abi: abi,
+        functionName: "deployedTokens",
+      },
+    ],
+  });
+  console.log(data[0].result.length);
+  console.log(data[1].result.toString());
+  // };
   // const
   // const getTokens = async () => {
   // const address = await getAddress();
@@ -33,7 +55,11 @@ const TokenDetails = () => {
   // console.log(userToken);
   // };
   useEffect(() => {
-    console.log(write({ args: [""] }));
+    // console.log(write({ args: [""] }));
+    // getUserTokens();
+    // getTotalTokens();
+    setUserToken(data[0].result.length);
+    setDeployedToken(data[1].result.toString());
   }, []);
 
   return (
@@ -46,13 +72,13 @@ const TokenDetails = () => {
           <div className="flex gap-4 items-center">
             <div className="text-xl">Total Launched Tokens:</div>
             <div className="w-10 h-10 bg-brand text-white rounded-[10px] flex items-center justify-center">
-              {deployedToken.toString()}
+              {deployedToken ? deployedToken.toString() : 0}
             </div>
           </div>
           <div className="flex gap-4 items-center">
             <div className="text-xl">Your Total Launched Tokens:</div>
             <div className="w-10 h-10 bg-brand text-white rounded-[10px] flex items-center justify-center">
-              {userToken.length}
+              {userToken}
             </div>
           </div>
         </div>
