@@ -31,26 +31,13 @@ const FormField = () => {
   const { chain } = useNetwork();
   const tokenfiaddress =
     chain?.id in contractAddress ? contractAddress[chain?.id][0] : null;
-  console.log(tokenfiaddress);
-  const { data, isLoading, error, write } = useContractWrite({
+  const { data, isLoading, isSuccess, error, write } = useContractWrite({
     address: tokenfiaddress,
     abi: abi,
     functionName: "deployERC20Token",
   });
-
-  function deploy(name, symbol, supply) {
-    write({ args: [name, symbol, supply] });
-    console.log("called");
-
-    if (data) {
-      alert("Token deployed Successfully");
-    }
-
-    if (error) {
-      alert("Error deploying Token");
-      console.log(error);
-    }
-  }
+  console.log(isLoading);
+  console.log("sucesss", isSuccess);
 
   const { open } = useWeb3Modal();
   useEffect(() => {}, []);
@@ -59,7 +46,6 @@ const FormField = () => {
     symbol: "",
     supply: "",
   });
-
   const handleFormFieldChange = (FieldName, e) => {
     setCreateTokenForm({
       ...createTokenForm,
@@ -71,8 +57,14 @@ const FormField = () => {
     const name = createTokenForm.name;
     const symbol = createTokenForm.symbol;
     const supply = createTokenForm.supply;
-    deploy(name, symbol, supply);
+    write({ args: [name, symbol, supply] });
   };
+  if (isSuccess) {
+    createTokenForm.name = "";
+    createTokenForm.symbol = "";
+    createTokenForm.supply = "";
+  }
+  console.log("data", data);
   return (
     <form
       onSubmit={handleFormSubmit}
@@ -111,9 +103,19 @@ const FormField = () => {
         ) : (
           <button
             type="submit"
-            className={`rounded-md sm:p-5 p-4 active:scale-95 transition-all duration-300 bg-white color sm:px-12`}
+            className={`rounded-md sm:p-5 p-4 font-medium text-[14px] leading-[22px] active:scale-95 transition-all duration-300 bg-pink-100 color sm:px-12`}
           >
-            Create Token
+            {isLoading ? (
+              <div className="flex gap-2">
+                <div
+                  class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                  role="status"
+                ></div>
+                deploying...
+              </div>
+            ) : (
+              <p>Create Token</p>
+            )}
           </button>
         )}
       </div>

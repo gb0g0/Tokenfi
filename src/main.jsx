@@ -3,16 +3,28 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
-
-import { WagmiConfig } from "wagmi";
-import { zetachainAthensTestnet, localhost, mainnet } from "wagmi/chains";
+// import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+// import { WagmiConfig } from "wagmi";
+// import { zetachainAthensTestnet, localhost, mainnet } from "wagmi/chains";
 // 1. Get projectId
 const projectId = "5c036caa882e3306871ef7df0eefdfc6";
+
+import "@rainbow-me/rainbowkit/styles.css";
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  lightTheme,
+} from "@rainbow-me/rainbowkit";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
 export const Nautileus = {
   id: 22222,
   name: "Nautileus",
   network: "Nautileus",
+  iconUrl:
+    "https://ipfs.io/ipfs/QmafK1JDWBNtBwtKQQWbTQjQBQvev2jhWR86dK5n1ZgEKo",
   nativeCurrency: { name: "Nautchain", symbol: "BZC", decimals: 18 },
   rpcUrls: {
     default: {
@@ -58,29 +70,44 @@ export const EngramTestnet = {
   testnet: true,
 };
 
-// 2. Create wagmiConfig
-const metadata = {
-  // name: "Web3Modal",
-  // description: "Web3Modal Example",
-  // url: "https://web3modal.com",
-  // icons: ["https://avatars.githubusercontent.com/u/37784886"],
-};
+const { chains, publicClient } = configureChains(
+  [Nautileus, EngramTestnet],
+  [publicProvider()]
+);
 
-const chains = [Nautileus, EngramTestnet];
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
+const { connectors } = getDefaultWallets({
+  appName: "Tokenfi Network",
+  projectId: projectId,
+  chains,
+});
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient,
+});
 
 // 3. Create modal
 createWeb3Modal({
   wagmiConfig,
   projectId,
   chains,
-  defaultChain: EngramTestnet,
+  defaultChain: Nautileus,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <WagmiConfig config={wagmiConfig}>
-      <App />
+      <RainbowKitProvider
+        chains={chains}
+        theme={lightTheme({
+          accentColor: "#260e0e",
+          accentColorForeground: "white",
+          borderRadius: "medium",
+        })}
+        coolMode
+      >
+        <App />
+      </RainbowKitProvider>
     </WagmiConfig>
   </React.StrictMode>
 );

@@ -4,6 +4,7 @@ import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { getAddress } from "../../utils";
 import { useNetwork, useAccount } from "wagmi";
 import { useEffect, useState } from "react";
+import { CustomButton } from "./CustomButton";
 
 const CreateHeader = () => {
   const { open } = useWeb3Modal();
@@ -25,7 +26,7 @@ const CreateHeader = () => {
         <Logo />{" "}
         <p className="text-white text-2xl hidden md:block">Tokenfi.Network</p>
       </Link>
-      <div className="flex items-center justify-center gap-2 font-medium">
+      {/* <div className="flex items-center justify-center gap-2 font-medium">
         {address == null ? (
           <></>
         ) : (
@@ -48,8 +49,8 @@ const CreateHeader = () => {
         >
           {address == null ? "Connect" : "Connected"}
         </button>
-        {/* <w3m-button /> */}
-      </div>
+      </div> */}
+      <CustomButton />
     </div>
   );
 };
