@@ -61,7 +61,9 @@ const TokenDetails = () => {
     // console.log(write({ args: [""] }));
     // getUserTokens();
     // getTotalTokens();
-    if (!address || chain.unsupported) {
+    console.log(error);
+    console.log(data);
+    if (!address || chain.unsupported || data[0 || 1].status == "failure") {
       setUserToken([]);
       setDeployedToken(0);
     } else {
@@ -69,7 +71,7 @@ const TokenDetails = () => {
       setDeployedToken(data[1].result);
     }
   }, [address, chain]);
-
+  
   return (
     <div className="w-full px-10 my-6 sm:px-16">
       <div className="py-5 sm:py-20 gap-8 px-6 sm:px-20 flex flex-col border rounded-[10px] border-black bg-white">
