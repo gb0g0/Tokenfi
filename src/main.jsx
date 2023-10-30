@@ -19,12 +19,12 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
-export const Nautileus = {
+const Nautileus = {
   id: 22222,
   name: "Nautileus",
   network: "Nautileus",
   iconUrl:
-    "https://ipfs.io/ipfs/QmafK1JDWBNtBwtKQQWbTQjQBQvev2jhWR86dK5n1ZgEKo",
+    "https://pbs.twimg.com/profile_images/1626750544642727937/qNCwFLUt_400x400.jpg",
   nativeCurrency: { name: "Nautchain", symbol: "BZC", decimals: 18 },
   rpcUrls: {
     default: {
@@ -37,13 +37,36 @@ export const Nautileus = {
   blockExplorers: {
     default: {
       name: "Nautileus Explorer",
-      url: "",
+      url: "https://nautscan.com/mainnet/",
     },
   },
-  testnet: true,
+  testnet: false,
+};
+const NautileusTestnet = {
+  id: 88002,
+  name: "Nautilus Proteus Testnet",
+  network: "Nautilus Proteus Testnet",
+  iconUrl:
+    "https://pbs.twimg.com/profile_images/1626750544642727937/qNCwFLUt_400x400.jpg",
+  nativeCurrency: { name: "Nautchain", symbol: "tBZC", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://api.proteus.nautchain.xyz/solana"],
+    },
+    public: {
+      http: ["https://api.proteus.nautchain.xyz/solana"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Nautscan",
+      url: "https://proteus.nautscan.com/",
+    },
+  },
+  testnet: false,
 };
 
-export const EngramTestnet = {
+const EngramTestnet = {
   id: 130,
   name: "Engram Testnet",
   network: "Engram Testnet",
@@ -71,7 +94,7 @@ export const EngramTestnet = {
 };
 
 const { chains, publicClient } = configureChains(
-  [Nautileus, EngramTestnet],
+  [Nautileus, EngramTestnet, NautileusTestnet],
   [publicProvider()]
 );
 
@@ -91,7 +114,7 @@ createWeb3Modal({
   wagmiConfig,
   projectId,
   chains,
-  defaultChain: Nautileus,
+  defaultChain: EngramTestnet,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
